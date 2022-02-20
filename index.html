@@ -35,6 +35,91 @@
         .home-header {
             background-image: url(wp-content/uploads/2016/11/home_background.jpg);
         }
+        
+
+
+.video-player {
+  width: 100%;
+  margin: 0 auto;
+  background: #172e3c;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.video-remote {
+  width: 20%;
+  float: left;
+}
+
+.remote-button {
+  display: block;
+  margin-bottom: 2px;
+  color: #fff;
+  cursor: pointer;
+  padding: 1em;
+  font-size: 16px;
+}
+
+.remote-button.current {
+  background: #f02d72 !important;
+  color: #fff;
+  cursor: default !important;
+}
+
+.remote-button:hover {
+  background: #f02d72;
+  color: #fff;
+}
+
+.video-holder {
+  width: 80%;
+  float: left;
+}
+
+.video-single {
+  opacity: 0;
+  display: none;
+  transition: opacity 1s;
+}
+
+.video-single.current {
+  display: inherit;
+  opacity: 1;
+}
+
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0 15px 15px 0;
+}
+
+@media screen and (max-width: 767px) {
+  .video-remote,
+  .video-holder {
+    float: none;
+    width: 100%;
+  }
+}
+
+.clearme:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
     </style>
     <title>Best Moments Wp Theme &#8211; Just another WordPress site</title>
     <script>
@@ -140,16 +225,16 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->+
                 <div class="collapse navbar-collapse" id="wedding-nav">
                     <ul id="menuid" class="nav navbar-nav left-nav">
-                        <li id="menu-item-53" class="parent menu-item menu-item-type-post_type menu-item-object-page"><a href="#home" class="link_menu home"><span class="nav-label">home</span></a></li>
-                        <li id="menu-item-52" class="parent menu-item menu-item-type-post_type menu-item-object-page"><a href="#couple" class="link_menu couple"><span class="nav-label">couple</span></a></li>
-                        <li id="menu-item-51" class="parent menu-item menu-item-type-post_type menu-item-object-page"><a href="#story" class="link_menu story"><span class="nav-label">story</span></a></li>
-                        <li id="menu-item-50" class="parent menu-item menu-item-type-post_type menu-item-object-page"><a href="#events" class="link_menu events"><span class="nav-label">events</span></a></li>
-                        <li id="menu-item-49" class="parent menu-item menu-item-type-post_type menu-item-object-page"><a href="#people" class="link_menu people"><span class="nav-label">Memes</span></a></li>
-                        <li id="menu-item-48" class="parent menu-item menu-item-type-post_type menu-item-object-page"><a href="#rsvp" class="link_menu rsvp"><i class="li-right"></i><span class="nav-label">rsvp</span></a></li>
-                        <li id="menu-item-47" class="parent menu-item menu-item-type-post_type menu-item-object-page"><a href="#gallery" class="link_menu gallery"><i class="li-right"></i><span class="nav-label">gallery</span></a></li>
-                        <li id="menu-item-46" class="parent menu-item menu-item-type-post_type menu-item-object-page"><a href="#blog" class="link_menu blog"><i class="li-right"></i><span class="nav-label">blog</span></a></li>
-                        <li id="menu-item-45" class="parent menu-item menu-item-type-post_type menu-item-object-page"><a href="#" onclick="playSound();" class="link_menu location"><i class="li-right"></i><span class="nav-label">Music</span></a></li>
-                        <li id="menu-item-44" class="parent menu-item menu-item-type-post_type menu-item-object-page"><a href="#qrlove" class="link_menu gifts"><i class="li-right"></i><span class="nav-label">QR Love</span></a></li>
+                        <li id="menu-item-53" class="parent menu-item menu-item-type-post_type menu-item-object-page"><a href="#home" class="link_menu home"><span class="nav-label">HOME</span></a></li>
+                        <li id="menu-item-52" class="parent menu-item menu-item-type-post_type menu-item-object-page"><a href="#couple" class="link_menu couple"><span class="nav-label">COUPLE</span></a></li>
+                        <li id="menu-item-51" class="parent menu-item menu-item-type-post_type menu-item-object-page"><a href="#story" class="link_menu story"><span class="nav-label">STORY</span></a></li>
+                        <li id="menu-item-50" class="parent menu-item menu-item-type-post_type menu-item-object-page"><a href="#" onclick="playSound();" class="link_menu events"><span class="nav-label">MUSIC</span></a></li>
+                        <li id="menu-item-49" class="parent menu-item menu-item-type-post_type menu-item-object-page"><a href="#people" class="link_menu people"><span class="nav-label">MEMES</span></a></li>
+                        <li id="menu-item-48" class="parent menu-item menu-item-type-post_type menu-item-object-page"><a href="#rsvp" class="link_menu rsvp"><i class="li-right"></i><span class="nav-label">VIDEO</span></a></li>
+                        <li id="menu-item-47" class="parent menu-item menu-item-type-post_type menu-item-object-page"><a href="#gallery" class="link_menu gallery"><i class="li-right"></i><span class="nav-label">PHOTO</span></a></li>
+                        <li id="menu-item-46" class="parent menu-item menu-item-type-post_type menu-item-object-page"><a href="#blog" class="link_menu blog"><i class="li-right"></i><span class="nav-label">Events</span></a></li>
+                        <li id="menu-item-45" class="parent menu-item menu-item-type-post_type menu-item-object-page"><a href="#" onclick="playSound();" class="link_menu location"><i class="li-right"></i><span class="nav-label">MUSIC</span></a></li>
+                        <li id="menu-item-44" class="parent menu-item menu-item-type-post_type menu-item-object-page"><a href="#qrlove" class="link_menu gifts"><i class="li-right"></i><span class="nav-label">QR LOVE</span></a></li>
                     </ul>
 
                     <a class="navbar-logo text-hide" href="index.html"><img src="wp-content/themes/bestmoment/images/logo.png" alt="Best Moments Wp Theme" /></a>
@@ -744,6 +829,75 @@
             </div>
         </div>
     </section>
+
+
+    <section id="Video" class="bestmoment_addclass gallery">
+        <div class="container">
+            <div class="row">
+                <div class="bestmomentadd photo-gallery section-padding-top section-padding-bottom">
+
+                    <div class="col-md-12">
+                        <h2 class="section-title text-center"><span class="text-blackish arima-madurairegular">Video </span> <span class="text-pink">Gallery</span></h2>
+                        <div class="text-center">
+                            <span class="title-strip-pink text-pink">
+                                <i class="fa fa-heart" aria-hidden="true"></i>
+                                <i class="fa fa-heart" aria-hidden="true"></i>
+                                <i class="fa fa-heart" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                        <p class="section-tagline text-grey-blackish">If pictures are worth a thoudand words, then videos are limitless. Here some videos for you baby.</p>
+                    </div>
+                    <div class="clearfix col-md-12">
+
+                        <div class="video-player clearme">
+
+                            <div class="video-remote">
+
+                                <a class="remote-button current" data-tab="vid-1">Video 1 Title</a>
+                                <a class="remote-button" data-tab="vid-2">And Video Two</a>
+                                <a class="remote-button" data-tab="vid-3">Video 3 Has A Long Title Ya Know, Spanning Multiple Lines</a>
+                                <a class="remote-button" data-tab="vid-4">Video 4</a>
+
+                            </div>
+
+                            <div class="video-holder">
+
+                                <div class="video-single current" id="vid-1">
+                                    <div class="embed-container">
+                                        <iframe src="Video/1.mp4" width="740" height="416" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                                    </div>
+                                </div>
+
+                                <div class="video-single" id="vid-2">
+                                    <div class="embed-container">
+                                        <iframe src="https://player.vimeo.com/video/120329810?color=ffffff&title=0&byline=0&portrait=0" width="740" height="416" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                                    </div>
+                                </div>
+
+                                <div class="video-single" id="vid-3">
+                                    <div class="embed-container">
+                                        <iframe src="https://player.vimeo.com/video/111478763?color=ffffff&title=0&byline=0&portrait=0" width="740" height="416" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                                    </div>
+                                </div>
+
+                                <div class="video-single" id="vid-4">
+                                    <div class="embed-container">
+                                        <iframe src="https://player.vimeo.com/video/153849325?color=ffffff&title=0&byline=0&portrait=0" width="740" height="416" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                                    </div>
+                                </div>
+
+                            </div><!-- video-holder -->
+
+                        </div><!-- video-player -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
     <section id="blog" class="bestmoment_addclass blog">
         <div class="container">
             <div class="row">
@@ -751,7 +905,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12">
-                                <h2 class="section-title text-center"><span class="text-blackish arima-madurairegular">Our </span> <span class="text-pink">Blog</span></h2>
+                                <h2 class="section-title text-center"><span class="text-blackish arima-madurairegular">Birthday</span> <span class="text-pink">Events</span></h2>
                                 <div class="text-center">
                                     <span class="title-strip-pink text-pink">
                                         <i class="fa fa-heart" aria-hidden="true"></i>
@@ -868,7 +1022,19 @@
         function playSound() {
             document.getElementById("Music").play();
         }
+        jQuery(document).ready(function ($) {
 
+            $('.remote-button').click(function () {
+                var tab_id = $(this).attr('data-tab');
+
+                $('.remote-button').removeClass('current');
+                $('.video-single').removeClass('current');
+
+                $(this).addClass('current');
+                $("#" + tab_id).addClass('current');
+            })
+
+        })
     </script>
 </body>
 
