@@ -113,6 +113,10 @@
 
 <body class="home page-template page-template-frontpage page-template-frontpage-php page page-id-13" data-spy="scroll" data-target=".navbar" data-offset="10">
 
+
+    <audio autoplay id="Music" style="display:none;"><source src="Music/HomeBGM.mp3" type="audio/mp3"></audio>
+
+
     <div id="loader-wrapper">
         <div id="loader"></div>
         <div class="loader-section section-left"></div>
@@ -144,7 +148,7 @@
                         <li id="menu-item-48" class="parent menu-item menu-item-type-post_type menu-item-object-page"><a href="#rsvp" class="link_menu rsvp"><i class="li-right"></i><span class="nav-label">rsvp</span></a></li>
                         <li id="menu-item-47" class="parent menu-item menu-item-type-post_type menu-item-object-page"><a href="#gallery" class="link_menu gallery"><i class="li-right"></i><span class="nav-label">gallery</span></a></li>
                         <li id="menu-item-46" class="parent menu-item menu-item-type-post_type menu-item-object-page"><a href="#blog" class="link_menu blog"><i class="li-right"></i><span class="nav-label">blog</span></a></li>
-                        <li id="menu-item-45" class="parent menu-item menu-item-type-post_type menu-item-object-page"><a href="#location" class="link_menu location"><i class="li-right"></i><span class="nav-label">location</span></a></li>
+                        <li id="menu-item-45" class="parent menu-item menu-item-type-post_type menu-item-object-page"><a href="#" onclick="playSound();" class="link_menu location"><i class="li-right"></i><span class="nav-label">Music</span></a></li>
                         <li id="menu-item-44" class="parent menu-item menu-item-type-post_type menu-item-object-page"><a href="#qrlove" class="link_menu gifts"><i class="li-right"></i><span class="nav-label">QR Love</span></a></li>
                     </ul>
 
@@ -861,6 +865,10 @@
         jQuery("#countdown").countdown({
             date: "16 December 2022 10:15"
         });
+        function playSound() {
+            document.getElementById("Music").play();
+        }
+
     </script>
 </body>
 
